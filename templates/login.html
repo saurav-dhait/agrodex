@@ -37,11 +37,11 @@
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
-                    <form action="#">
+                    <form method="post" action="{{ url_for('login') }}">
                         <h1>Sign In</h1>
                         <span>or use your account</span>
-                        <input type="email" placeholder="Email" required />
-                        <input type="password" placeholder="Password" required />
+                        <input type="email" placeholder="Email" required name="email"/>
+                        <input type="password" placeholder="Password" name="pass" required />
                         <a href="#">Forgot your password?</a>
                         <button type="submit">Sign In</button>
                     </form>
@@ -63,7 +63,19 @@
             </div>
         </div>
     </div>
-
+    <br>
+    <br>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div>
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
     <script src="/js/login.js"></script>
     
 </body>
