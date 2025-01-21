@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/css/contact.css">
+</head>
+<body><div id="video-container">
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="/images/logo.png" alt="Logo">
+            <span class="logo-text">AgroDex</span>
+        </div>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('blog') }}">Blog</a>
+        </div>
+        <div class="navbar-toggler" id="navbarToggler">
+            <span class="toggler-icon">&#9776;</span>
+        </div>
+    </nav>
+    
+    <div class="video-overlay"></div>
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="/videos/trees.mp4" type="video/mp4">
+    </video>
+  
+    
+        <div class="left-section">
+            <h1>Get in touch with us</h1>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p><strong>Email: </strong>abcd@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p><strong>Phone Number: </strong>+91 9876543212</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>Address: </strong>Subhash Nagar Hingna Road Nagpur, 440022</p>
+                </div>
+            
+        </div>
+    </div>
+        <div class="right-section">
+            <form action="#">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (privacy policy)*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="I'm interested in learning more about..."></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="master-container">
+            <div class="footer-image-section">
+                <img src="/images/logo.png" alt="footer-image"><br>
+                <h1>AgroDex</h1>
+            </div>
+            <div class="footer-nav">
+                <h2>Quick Links</h2>
+                <div class="footer-links">
+                    <a href="{{ url_for('index') }}">Home</a>
+                    <a href="{{ url_for('about') }}">About</a>
+                    <a href="{{ url_for('index') }}">Mission</a>
+                    <a href="{{ url_for('blog') }}">Projects</a>
+                    <a href="{{ url_for('contact') }}">Contact</a>
+                </div>
+            </div>
+            <div class="socials">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com"><img class="social-icon" src="https://img.icons8.com/?size=100&id=118467&format=png&color=000000" alt="facebook"></a>
+                    <a href="https://www.instagram.com"><img class="social-icon" src="https://img.icons8.com/?size=100&id=32292&format=png&color=000000" alt="instagram"></a>
+                    <a href="https://www.linkedin.com"><img class="social-icon" src="https://img.icons8.com/?size=100&id=447&format=png&color=000000" alt="linkedin"></a>
+                    <a href="mailto:priyanshudeshmukh2022@gmail.com"><img class="social-icon" src="https://img.icons8.com/?size=100&id=53388&format=png&color=000000" alt="email"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

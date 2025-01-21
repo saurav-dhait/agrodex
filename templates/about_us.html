@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroDex</title>
+    <link rel="stylesheet" href="/css/about.css">
+</head>
+
+<body>
+    <div id="video-container"></div>
+    
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="/images/logo.png" alt="Logo">
+            <span class="logo-text">AgroDex</span>
+        </div>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('blog') }}">Blog</a>
+        </div>
+        <div class="navbar-toggler" id="navbarToggler">
+            <span class="toggler-icon">&#9776;</span>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="about-section">
+            <h2>About Us</h2>
+            <p>
+                We are dedicated to revolutionizing the agricultural sector through cutting-edge technology. Our mission is to empower farmers, traders, and stakeholders in the agri-horticultural industry by providing accurate and reliable price predictions for essential commodities such as pulses, onions, and potatoes.
+            </p>
+
+            <h2>Our Vision</h2>
+            <p>
+                We envision a future where farmers can make informed decisions based on data-driven insights, leading to increased profitability and sustainability in their operations. By harnessing the power of Artificial Intelligence (AI) and Machine Learning (ML), we aim to bridge the gap between traditional farming practices and modern technological advancements.
+            </p>
+
+            <h2>What We Do</h2>
+            <p>
+                Our team of experts combines agricultural knowledge with advanced data analytics to develop robust predictive models. These models analyze historical price trends, market demand, weather patterns, and other critical factors to forecast the prices of key agri-horticultural commodities. Our goal is to provide actionable insights that help farmers optimize their production and marketing strategies.
+            </p>
+
+            <section class="team-section">
+                <h3 style="color: #4caf50;">Meet Our Team</h3>
+                <div class="team-container">
+                    <div class="team-member">
+                        <img src="/images/rajat.jpg" alt="Rajat Jain">
+                        <p>Rajat Jain</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/priyanshu deshmukh.jpeg" alt="Priyanshu Deshmukh">
+                        <p>Priyanshu Deshmukh</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/atharva.jpg" alt="Atharva Dethe">
+                        <p>Atharva Dethe</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/saurav.jpeg" alt="Saurav Dhait">
+                        <p>Saurav Dhait</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/sapate.jpg" alt="Atharva Sapate">
+                        <p>Atharva Sapate</p>
+                    </div>
+                </div>
+            </section>
+
+            <h2>Why Choose Us?</h2>
+            <p>
+                Our team comprises agricultural scientists, data analysts, and machine learning specialists, bringing together a wealth of expertise to address the challenges in agriculture. We utilize vast datasets and sophisticated algorithms to provide accurate, data-driven insights that empower farmers and stakeholders. Our focus is on enhancing economic stability while promoting sustainable agricultural practices. Additionally, we actively engage with farmers and agricultural organizations to ensure that our solutions meet the real needs of the community.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="master-container">
+            <div class="footer-image-section">
+                <img src="/images/logo.png" alt="footer-image"><br>
+                <h1>AgroDex</h1>
+            </div>
+            <div class="footer-nav">
+                <h2>Quick Links</h2>
+                <div class="footer-links">
+                    <a href="{{ url_for('index') }}">Home</a>
+                    <a href="{{ url_for('about') }}">About</a>
+                    <a href="{{ url_for('index') }}">Mission</a>
+                    <a href="{{ url_for('blog') }}">Projects</a>
+                    <a href="{{ url_for('contact') }}">Contact</a>
+                </div>
+            </div>
+            <div class="socials">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com"><img class="social-icon" src="https://img.icons8.com/?size=100&id=118467&format=png&color=000000" alt="facebook"></a>
+                    <a href="https://www.instagram.com"><img class="social-icon" src="https://img.icons8.com/?size=100&id=32292&format=png&color=000000" alt="instagram"></a>
+                    <a href="https://www.linkedin.com"><img class="social-icon" src="https://img.icons8.com/?size=100&id=447&format=png&color=000000" alt="linkedin"></a>
+                    <a href="mailto:priyanshudeshmukh2022@gmail.com"><img class="social-icon" src="https://img.icons8.com/?size=100&id=53388&format=png&color=000000" alt="email"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            const loading = document.getElementById('loading');
+            loading.style.display = 'none';
+        };
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function checkScroll() {
+            const teamMembers = document.querySelectorAll('.team-member');
+            teamMembers.forEach(member => {
+                if (isElementInViewport(member)) {
+                    member.classList.add('animate');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+    </script>
+</body>
+
+</html>

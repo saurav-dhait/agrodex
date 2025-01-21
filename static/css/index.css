@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000000;
+    font-family: "Lato", sans-serif;
+    color: #fff;
+}
+
+#landing-page {
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height:80px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #2df53a;
+}
+
+.navbar-toggler {
+    display: none;
+    cursor: pointer;
+}
+
+.toggler-icon {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+}
+
+#video-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;  background: linear-gradient(
+        to top, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,0.7) 30%, 
+        rgba(0,0,0,0.3) 60%, 
+        rgba(0,0,0,0) 100%
+      
+    );
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: -1;
+    
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.heading-and-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-heading {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    transition: 0.5s;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-heading:hover {
+    -webkit-text-stroke: 2px #b3c7b6;
+    color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.link-under-main-heading {
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.link-under-main-heading:hover {
+    color: black;
+    background-color: white;
+}
+
+.main-content {
+    margin: 2% 10%;
+    text-align: justify;
+    text-indent: 1em;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin: 5%;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .link-under-main-heading {
+        font-size: 1rem;
+    }
+}
+.explore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10px;
+
+}
+
+.explore a {
+    position: relative;
+    padding: 10px 30px;
+    margin: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    border-radius: 50px; /* Capsule shape */
+    transition: 0.5s;
+    display: inline-flex; /* Use flex to align text and image */
+    align-items: center;
+    gap: 10px; /* Add space between text and image */
+}
+
+.explore a:hover {
+    background:   #b3c7b6;
+    color: #000000;
+    box-shadow: 0 0 20px #ffffff;
+    transition-delay: 0.2s;
+}
+
+.explore a img {
+    width: 30px; /* Set the desired image size */
+    height: 30px; /* Match width for a square image */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image maintains aspect ratio */
+    transition: 0.3s; /* Smooth hover effect */
+}
+
+.explore a:hover img {
+    transform: scale(1.1); /* Slightly enlarge image on hover */
+}
+
+.explore a:active {
+    background: #b3c7b6; /* Change color on click */
+    box-shadow: none; /* Optional: remove box-shadow on click */
+}

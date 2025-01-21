@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroDex</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" href="/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="landing-page">
+        <div id="video-container">
+            <nav class="navbar">
+                <div class="navbar-logo">
+                    <img src="/images/logo.png" alt="Logo">
+                    <span class="logo-text">AgroDex</span>
+                </div>
+                <div class="navbar-links" id="navbarLinks">
+                    <a href="{{ url_for('index') }}">Home</a>
+                    <a href="{{ url_for('about') }}">About</a>
+                    <a href="{{ url_for('contact') }}">Contact</a>
+                    <a href="{{ url_for('blog') }}">Blog</a>
+                </div>
+                <div class="navbar-toggler" id="navbarToggler">
+                    <span class="toggler-icon">&#9776;</span>
+                </div>
+            </nav>
+            <div class="video-overlay"></div>
+            <video autoplay muted loop playsinline id="bg-video">
+                <source src="/videos/trees1.mp4" type="video/mp4">
+            </video>
+            <div class="heading-and-button">
+                <h1 class="main-heading">Transforming Agricultural Economics</h1>
+                <h2 >Alleviate systemic inefficiencies in the Agri-horticultural domain and empowering Farmers.</h2>
+                <br>
+                <br>
+                
+                <div class="explore">
+                    <a href="{{ url_for('login') }}">
+                        Explore
+                        <img src="/images/arrow.jpg" alt="Explore Icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content"></main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggler = document.getElementById('navbarToggler');
+            const navbarLinks = document.getElementById('navbarLinks');
+            navbarToggler.addEventListener('click', function () {
+                navbarLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
