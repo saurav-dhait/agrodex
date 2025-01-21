@@ -2,9 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Prevent body scrolling */
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Full-page centered container */
+        .page-container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Explore Button Styles */
+        .explore {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .explore a {
+            position: relative;
+            padding: 15px 40px;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 22px;
+            border-radius: 50px;
+            transition: 0.5s;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            border: 2px solid #ffffff;
+            background: transparent;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .explore a:hover {
+            background: #b3c7b6;
+            color: #000000;
+            box-shadow: 0 0 30px rgba(255,255,255,0.5);
+            transition-delay: 0.2s;
+        }
+
+        .explore a img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .explore a:hover img {
+            transform: scale(1.1);
+        }
+
+        .explore a:active {
+            background: #b3c7b6;
+            box-shadow: none;
+            transform: scale(0.95);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .explore a {
+                padding: 10px 30px;
+                font-size: 18px;
+            }
+
+            .explore a img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-streamlit
+    <div class="page-container">
+        <div class="explore">
+            <a href="http://127.0.0.1:8501" target="_blank" >
+                Start
+                <img src="\images\arrow.jpg" alt="Explore Icon">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function exploreAction() {
+            // Add your explore action here
+            alert('Explore button clicked!');
+        }
+    </script>
 </body>
 </html>
